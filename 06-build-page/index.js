@@ -40,7 +40,7 @@ const createHTML = async (project, components) => {
     fs.readdir(folderCopy, {withFileTypes: true}, (e, data) => {
       if (e) console.log(e);
       for (let el of data){
-        fs.access(path.join(pathToFolder, el.name), (err) => {
+        fs.access(path.join(folder, el.name), (err) => {
           if (err){
             fs.rm(path.join(folderCopy, el.name), {recursive: true}, (err) => {
               if (err) console.log(err);
